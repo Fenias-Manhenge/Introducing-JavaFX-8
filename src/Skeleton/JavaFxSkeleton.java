@@ -39,5 +39,23 @@ public class JavaFxSkeleton extends Application{
         //give the stage a title.
         myStage.setTitle("JavaFX Skeleton");
         
+        /* create a root node. In this case a flow Layout
+        is used, but several alternatives exist.
+        */
+        FlowPane rootnode = new FlowPane();
+        
+        // Create a Scene
+        Scene myScene = new Scene(rootnode, 500, 400);
+        
+        // Set the Scene on the Stage.
+        myStage.setScene(myScene);
+        
+        // show the stage and its scene.
+        myStage.show();
+    }
+    
+    @Override
+    public void stop(){
+        System.out.println("Inside the stop() method.");
     }
 }
