@@ -11,9 +11,13 @@ package Skeleton;
  */
 
 import javafx.application.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.stage.*;
+import javafx.geometry.*;
+import javafx.scene.control.*;
 
 public class JavaFxSkeleton extends Application{
 
@@ -31,6 +35,8 @@ public class JavaFxSkeleton extends Application{
         System.out.println("Inside the init() method.");
     }
     
+    Label response;
+    
     //override the start() method.
     @Override
     public void start(Stage myStage){
@@ -42,10 +48,29 @@ public class JavaFxSkeleton extends Application{
         /* create a root node. In this case a flow Layout
         is used, but several alternatives exist.
         */
-        FlowPane rootnode = new FlowPane();
+        FlowPane rootnode = new FlowPane(10, 10);
+        rootnode.setAlignment(Pos.CENTER);
+        
+        //create a label
+        response = new Label("Push a button");
+        
+        // create two push buttons
+        Button btnFirst = new Button("First");
+        Button btnSecond = new Button("Second");
+        
+        btnFirst.setOnAction((ActionEvent event) -> {
+            response.setText("First button was pressed!");
+        });
+        
+        btnSecond.setOnAction((ActionEvent event) -> {
+            response.setText("Second button was pressed!");
+        });
+        
+        // putting the Controls into the rootNode and adding it to the scene graph
+        rootnode.getChildren().addAll(btnFirst, btnSecond, response);
         
         // Create a Scene
-        Scene myScene = new Scene(rootnode, 500, 400);
+        Scene myScene = new Scene(rootnode, 300, 100);
         
         // Set the Scene on the Stage.
         myStage.setScene(myScene);
