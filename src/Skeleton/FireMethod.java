@@ -56,14 +56,16 @@ public class FireMethod extends Application{
                 cbPc.fire();
                 btnFire.setText("Unselect all");
             });
-        } else {
-            if(btnFire.getText().startsWith("Se")){
+            
+        }
+            
+            /*if(btnFire.getText().startsWith("Se")){
                 btnFire.setOnAction((event) -> {
                     cbAc.fire();
                     cbPc.fire();
-                    btnFire.setText("Select all");
+                    //btnFire.setText(btnFire.getText());
                 });
-            }
-        }
+            }*/
+        
     }
 }
