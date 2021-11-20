@@ -72,6 +72,10 @@ public class JavaFxSkeleton extends Application{
         // Create a Scene
         Scene myScene = new Scene(rootnode, 300, 100);
         
+        myScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        
+        btnFirst.setId("bt");
+        response.setId("rs");
         // Set the Scene on the Stage.
         myStage.setScene(myScene);
         

@@ -32,7 +32,7 @@ public class KeyEvents extends Application{
         FlowPane rootNode = new FlowPane(Orientation.VERTICAL, 0, 10);
         rootNode.setAlignment(Pos.CENTER_LEFT);
         rootNode.setPadding(new Insets(10, 0, 10, 10));
-        
+
         Scene myScene = new Scene(rootNode, 300, 300, Color.CHOCOLATE);
         myStage.setScene(myScene);
         
@@ -56,9 +56,8 @@ public class KeyEvents extends Application{
         myScene.setOnMouseMoved((MouseEvent e) -> {
             location.setText("Cordenates X(" + e.getSceneX() + "); " + "Y(" + e.getSceneY() + ")");
             
-            if(e.getSceneX() > 299 && e.getSceneY() > 299)
-                location = new Label("Move the mouse on the scene, to show the Cordenates (X, Y)");
-            
+            if(e.getSceneX() > 250 && e.getSceneY() > 250)
+                location.setText("Move the mouse on the scene, to show the Cordenates (X, Y)");
         });
         
         myScene.setOnMouseClicked((MouseEvent e) -> {
