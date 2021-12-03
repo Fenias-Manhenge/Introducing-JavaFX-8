@@ -13,12 +13,18 @@ import javafx.scene.layout.FlowPane;
 import javafx.geometry.*;
 import javafx.beans.value.*;
 import javafx.collections.*;
+import javafx.event.ActionEvent;
+import javafx.scene.input.KeyCode;
 
 public class ListViewDemo extends Application{
     
     ListView<String> lVProgLang;
     
     Label response;
+    
+    TextField txtAdd = new TextField();
+    
+    Button btnAdd;
     
     public static void main(String[] args) {
         launch(args);
@@ -29,7 +35,7 @@ public class ListViewDemo extends Application{
         
         myStage.setTitle("List View");
         
-        FlowPane rootNode = new FlowPane(Orientation.VERTICAL, 0, 20);
+        FlowPane rootNode = new FlowPane(Orientation.VERTICAL, 20, 20);
         rootNode.setAlignment(Pos.CENTER);
         rootNode.setPadding(new Insets(10));
         
@@ -38,6 +44,8 @@ public class ListViewDemo extends Application{
         myStage.setScene(myScene);
         
         response = new Label("Select your preffered languange");
+        
+        btnAdd = new Button("Add Languange");
         
         ObservableList<String> ProgLangTypes = FXCollections.observableArrayList("Python", "Java", "javaScrip", "C#", "C++", "Kotlin", "Go");
         
@@ -48,11 +56,23 @@ public class ListViewDemo extends Application{
         MultipleSelectionModel<String> listVSelModel = lVProgLang.getSelectionModel();
         
         listVSelModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            response.setText("Your preffered languange was " + oldValue + " and now is " + newValue);
+            response.setText("Your preffered languange was \n" + oldValue + " and now is " + newValue);
         });
         
-        rootNode.getChildren().addAll(lVProgLang, response);
+        btnAdd.setOnAction((ActionEvent event) -> {
+            //lVProgLang.setItems(FXCollections.observableArrayList(txtAdd.getText()));
+            lVProgLang.getItems().add(txtAdd.getText());
+            txtAdd.setText("");
+        });
         
+        lVProgLang.setOnKeyPressed((event) -> {
+            if (event.getCode() == KeyCode.DELETE) {
+                lVProgLang.getItems().remove(listVSelModel.getSelectedItem());
+            }
+        });
+        
+        rootNode.getChildren().addAll(lVProgLang, response, txtAdd, btnAdd);
+    
         myStage.show();
     }
 }
