@@ -13,11 +13,13 @@ import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.collections.*;
+import javafx.scene.input.*;
 
 public class ComboBoxDemo extends Application{
     
     ComboBox<String> cboLanguages;
     Label response;
+    Button btnShow;
     
     public static void main(String[] args) {
         launch(args);
@@ -28,11 +30,11 @@ public class ComboBoxDemo extends Application{
         
         myStage.setTitle("Combo Box");
         
-        FlowPane rootNode = new FlowPane(Orientation.VERTICAL, 0, 10);
+        FlowPane rootNode = new FlowPane(Orientation.VERTICAL, 0, 30);
         rootNode.setPadding(new Insets(10));
         rootNode.setAlignment(Pos.TOP_CENTER);
         
-        Scene myScene = new Scene(rootNode, 300, 200, Color.BLUE);
+        Scene myScene = new Scene(rootNode, 350, 200, Color.BLUE);
         
         myStage.setScene(myScene);
         
@@ -40,21 +42,39 @@ public class ComboBoxDemo extends Application{
         
         cboLanguages = new ComboBox<>(languages);
         response = new Label();
+        btnShow = new Button("Drop List");
         
-        cboLanguages.setPrefSize(150, 40);
+        cboLanguages.setPrefSize(200, 40);
         cboLanguages.setValue("Java");
         cboLanguages.setEditable(true);
 
-        int i = cboLanguages.getSelectionModel().getSelectedIndex();
+        /*int i = cboLanguages.getSelectionModel().getSelectedIndex();
         if(!languages.get(i).equals(cboLanguages.getValue())){
             languages.add(cboLanguages.getValue());
-        }
+        }*/
+        
+        /*if(cboLanguages.getSelectionModel().getSelectedItem() != cboLanguages.getValue()){
+            languages.add(cboLanguages.getValue());
+        }*/
         
         cboLanguages.setOnAction((event) -> {
             response.setText("Your prefered languange is " + cboLanguages.getValue());
         });
         
-        rootNode.getChildren().addAll(cboLanguages, response);
+        btnShow.setOnAction((event) -> {
+            cboLanguages.show();
+        });
+        
+        cboLanguages.setOnKeyPressed((event) -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                String dif = cboLanguages.getSelectionModel().getSelectedItem();
+                if(!cboLanguages.getValue().equals(dif)){
+                    languages.add(cboLanguages.getValue());
+                }
+            }
+        });
+        
+        rootNode.getChildren().addAll(cboLanguages, response, btnShow);
         
         myStage.show();
     }
