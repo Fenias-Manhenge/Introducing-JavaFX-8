@@ -81,5 +81,4 @@ public class TextFieldDemo extends Application{
         
         myStage.show();
     }
-    
 }
