@@ -39,7 +39,7 @@ public class RButton extends Application{
         Scene myScene = new Scene(rootNode, 200, 200, Color.ANTIQUEWHITE);
         myStage.setScene(myScene);
         
-        rbMouse = new RadioButton("Mouse");
+        rbMouse = new RadioButton("Miguel");
         rbTouchScreen = new RadioButton("Leu");
         rbKeyBoard = new RadioButton("Junior");
         

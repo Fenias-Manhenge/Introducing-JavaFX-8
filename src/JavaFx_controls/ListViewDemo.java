@@ -26,6 +26,8 @@ public class ListViewDemo extends Application{
     
     Button btnAdd;
     
+    Separator separator = new Separator(Orientation.HORIZONTAL);
+     
     public static void main(String[] args) {
         launch(args);
     }
@@ -53,6 +55,9 @@ public class ListViewDemo extends Application{
 
         lVProgLang.setPrefSize(130, 150);
         
+        separator.setPrefSize(100, 5);
+        separator.setHalignment(HPos.CENTER);
+        
         MultipleSelectionModel<String> listVSelModel = lVProgLang.getSelectionModel();
         
         listVSelModel.selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -71,7 +76,7 @@ public class ListViewDemo extends Application{
             }
         });
         
-        rootNode.getChildren().addAll(lVProgLang, response, txtAdd, btnAdd);
+        rootNode.getChildren().addAll(lVProgLang, response, txtAdd, btnAdd, separator);
     
         myStage.show();
     }
