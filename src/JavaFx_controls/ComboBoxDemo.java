@@ -46,32 +46,24 @@ public class ComboBoxDemo extends Application{
         
         cboLanguages.setPrefSize(200, 40);
         cboLanguages.setValue("Java");
-        cboLanguages.setEditable(true);
+        
+        cboLanguages.setOnMouseClicked((event) -> {
+           if(event.getButton() == MouseButton.SECONDARY){
+                cboLanguages.setEditable(true);
+            }
+        });
 
-        /*int i = cboLanguages.getSelectionModel().getSelectedIndex();
-        if(!languages.get(i).equals(cboLanguages.getValue())){
-            languages.add(cboLanguages.getValue());
-        }*/
-        
-        /*if(cboLanguages.getSelectionModel().getSelectedItem() != cboLanguages.getValue()){
-            languages.add(cboLanguages.getValue());
-        }*/
-        
         cboLanguages.setOnAction((event) -> {
+            int i = cboLanguages.getSelectionModel().getSelectedIndex();
+            if(!languages.get(i).equals(cboLanguages.getValue())){
+                languages.add(cboLanguages.getValue());
+            }
+            
             response.setText("Your prefered languange is " + cboLanguages.getValue());
         });
         
         btnShow.setOnAction((event) -> {
             cboLanguages.show();
-        });
-        
-        cboLanguages.setOnKeyPressed((event) -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                String dif = cboLanguages.getSelectionModel().getSelectedItem();
-                if(!cboLanguages.getValue().equals(dif)){
-                    languages.add(cboLanguages.getValue());
-                }
-            }
         });
         
         rootNode.getChildren().addAll(cboLanguages, response, btnShow);

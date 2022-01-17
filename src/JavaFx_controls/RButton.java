@@ -36,12 +36,14 @@ public class RButton extends Application{
         rootNode.setAlignment(Pos.CENTER_LEFT);
         rootNode.setPadding(new Insets(10));
         
-        Scene myScene = new Scene(rootNode, 200, 200, Color.ANTIQUEWHITE);
+        Scene myScene = new Scene(rootNode, 300, 200);
+        myScene.setFill(Color.CADETBLUE);
+        
         myStage.setScene(myScene);
         
-        rbMouse = new RadioButton("Miguel");
-        rbTouchScreen = new RadioButton("Leu");
-        rbKeyBoard = new RadioButton("Junior");
+        rbMouse = new RadioButton("Mouse");
+        rbTouchScreen = new RadioButton("TouchScreen");
+        rbKeyBoard = new RadioButton("KeyBoard");
         
         prompt = new Label("Who you will choose?");
         

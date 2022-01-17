@@ -33,7 +33,7 @@ public class TextFieldDemo extends Application{
         rootNode.setAlignment(Pos.CENTER);
         rootNode.setPadding(new Insets(10));
         
-        Scene myScene = new Scene(rootNode, 400, 200);
+        Scene myScene = new Scene(rootNode, 450, 200);
         
         myStage.setScene(myScene);
         
