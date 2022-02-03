@@ -27,7 +27,7 @@ public class TreeViewDemo extends Application{
     }
     
     @Override
-    //@SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public void start(Stage myStage){
         
         myStage.setTitle("TreeView");
@@ -62,9 +62,9 @@ public class TreeViewDemo extends Application{
         TreeItem<String> tiGenito = new TreeItem<>("Genito");
         tiErcilia.getChildren().addAll(tiCochi, tiGenito);
         
-        /*TreeItems Go
+        // TreeItems Go
         TreeItem<String> tiMaria = new TreeItem<>("Maria");
-        TreeItem<String> tiMica = new TreeItem<>("Mica Wanga");*/
+        TreeItem<String> tiMica = new TreeItem<>("Mica Wanga");
         tiGo.getChildren().addAll(new TreeItem<>("Maria"), new TreeItem<>("Mica Wanga"));
         
         // TreeItems Betinho

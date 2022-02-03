@@ -36,7 +36,7 @@ public class ChoiceBoxDemo extends Application{
         
         myStage.setScene(myScene);
         
-        ObservableList languanges = FXCollections.observableArrayList("Python", "Java", "javaScrip", "C#", "C++", "Kotlin", "Go");
+        ObservableList<String> languanges = FXCollections.observableArrayList("Python", "Java", "javaScrip", "C#", "C++", "Kotlin", "Go");
         
         chcLang = new ChoiceBox<>(languanges);
         
