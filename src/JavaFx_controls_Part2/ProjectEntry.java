@@ -10,9 +10,9 @@ import javafx.beans.property.*;
 public class ProjectEntry {
     
     // Declaring proprerties
-    private SimpleStringProperty programmer;
-    private SimpleStringProperty status;
-    private SimpleIntegerProperty size;
+    private final SimpleStringProperty programmer;
+    private final SimpleStringProperty status;
+    private final SimpleIntegerProperty size;
 
     // Constructor
     public ProjectEntry(String programmer, String status, int size) {

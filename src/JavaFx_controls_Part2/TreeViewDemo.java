@@ -39,7 +39,7 @@ public class TreeViewDemo extends Application{
         rootNode.setAlignment(Pos.TOP_CENTER);
         
         Scene myScene = new Scene(rootNode, 400, 600, Color.ALICEBLUE);
-        
+        myScene.getStylesheets().add(getClass().getResource("/JavaFx_controls_Part2/TreeView.css").toExternalForm());
         myStage.setScene(myScene);
         
         lblResponse = new Label("No selection");
@@ -104,6 +104,7 @@ public class TreeViewDemo extends Application{
         });
         
         btnExpand = new Button("Expand/Collapse");
+        btnExpand.setId("btnExpand");
         
         btnExpand.setOnAction((event) -> {
             TreeItem<String> tmp = tvFamily.getSelectionModel().getSelectedItem();
