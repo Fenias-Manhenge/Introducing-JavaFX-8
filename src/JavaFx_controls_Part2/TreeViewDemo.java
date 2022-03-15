@@ -5,6 +5,7 @@ package JavaFx_controls_Part2;
  * @author fenia
  */
 
+import java.util.List;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.*;
@@ -13,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.geometry.*;
 import javafx.scene.image.*;
+import javafx.scene.text.Font;
 
 public class TreeViewDemo extends Application{
     
@@ -117,6 +119,11 @@ public class TreeViewDemo extends Application{
         
         Separator separator = new Separator(Orientation.HORIZONTAL);
         separator.autosize();
+        
+        //List<String>
+        Font.getFontNames().forEach(object -> {
+            System.out.println(object);
+        });
         
         rootNode.getChildren().addAll(tvFamily, lblResponse, separator, btnExpand);
         
