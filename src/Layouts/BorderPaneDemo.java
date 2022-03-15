@@ -56,8 +56,6 @@ public class BorderPaneDemo extends Application{
         sldRight.setPrefWidth(40);
         txtCenter.setText(String.valueOf(sldRight.getValue()));
         
-        //SingleSelectionModel<String> slmSlide = sldRight.getValue();
-        
         sldRight.valueProperty().addListener((observable, oldValue, newValue) -> {
             txtCenter.setText("" + newValue);
         });
