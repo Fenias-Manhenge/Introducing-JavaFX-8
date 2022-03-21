@@ -35,6 +35,7 @@ public class StackPaneDemo extends Application{
         txtCenter = new TextField();
         txtCenter.setMaxWidth(150);
         txtCenter.setPromptText("Digite algo aqui");
+        txtCenter.setFocusTraversable(false);
         
         StackPane rootNode = new StackPane();
         StackPane.setAlignment(lblLeu, Pos.TOP_CENTER);

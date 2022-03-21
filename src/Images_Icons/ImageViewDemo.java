@@ -35,7 +35,7 @@ public class ImageViewDemo extends Application{
         VBox rootNode = new VBox(10);
         rootNode.setAlignment(Pos.TOP_LEFT);
         rootNode.setPadding(new Insets(20));
-        VBox.setVgrow(leu, Priority.ALWAYS);
+        
         Scene myScene = new Scene(rootNode, 450, 700);
         myStage.setScene(myScene);
         
