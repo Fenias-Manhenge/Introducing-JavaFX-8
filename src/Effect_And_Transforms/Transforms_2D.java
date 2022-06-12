@@ -63,6 +63,7 @@ public class Transforms_2D extends Application{
         rootNode.setAlignment(Pos.CENTER);
         rootNode.setHgap(30);
         rootNode.setVgap(20);
+        //rootNode.setGridLinesVisible(true);
         
         Scene myScene = new Scene(rootNode, 800, 400, Color.AQUA);
         
