@@ -73,8 +73,8 @@ public class TextFieldDemo extends Application{
         });
         
         btnAnchor.setOnAction((event) -> {
-            //anchor.setText(txtInput.getAnchor());
-            System.exit(0);
+            anchor.setText("Anchor: " + String.valueOf(txtInput.getAnchor()));
+            anchor.setText("Anchor: " + String.valueOf(txtInput.getCaretPosition()));
         });
         
         rootNode.getChildren().addAll(txtInput, btnString, btnReverse, btnAnchor, btnClear, separetor, anchor, response);
