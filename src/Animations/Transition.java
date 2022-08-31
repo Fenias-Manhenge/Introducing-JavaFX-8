@@ -51,6 +51,8 @@ public class Transition extends Application{
         response.setContentDisplay(ContentDisplay.RIGHT);
         
         btnRotate = new Button("Rotate");
+        btnRotate.setStyle("-fx-background-color: #093A81");
+        btnRotate.setTextFill(Color.WHITE);
         btnScale = new Button("Scale");
         btnTranslate = new Button("Translate");
         
