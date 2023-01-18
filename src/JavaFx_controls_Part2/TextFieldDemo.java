@@ -47,6 +47,11 @@ public class TextFieldDemo extends Application{
         btnClear = new Button("Clear");
         btnAnchor = new Button("Anchor");
         
+        MenuItem miCopy = new CheckMenuItem("Copy");
+        MenuItem miPaste = new CheckMenuItem("Paste");
+        MenuItem miCut = new CheckMenuItem("Cut");
+        
+        txtInput.setContextMenu(new ContextMenu(miCopy, miPaste, miCut));
         txtInput.setPromptText("Enter a String");
         txtInput.setPrefColumnCount(10);
         

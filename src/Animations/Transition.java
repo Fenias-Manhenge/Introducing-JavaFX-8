@@ -36,7 +36,7 @@ public class Transition extends Application{
     public void start(Stage myStage) throws Exception {
         
         myStage.setTitle("Transitions");
-        myStage.getIcons().add(new Image(getClass().getResourceAsStream("rotate.png")));
+        //myStage.getIcons().add(new Image(getClass().getResourceAsStream("rotate.png")));
         
         VBox rootNode = new VBox(40);
         rootNode.setAlignment(Pos.CENTER);
@@ -46,8 +46,7 @@ public class Transition extends Application{
         
         myStage.setScene(myScene);
         
-        response = new Label("Push the start button", new ImageView(
-                new Image(getClass().getResourceAsStream("response.png"), 30, 30, true, true)));
+        response = new Label("Push the start button");
         response.setContentDisplay(ContentDisplay.RIGHT);
         
         btnRotate = new Button("Rotate");

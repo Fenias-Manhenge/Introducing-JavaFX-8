@@ -34,7 +34,7 @@ public class EffectsDemo extends Application{
     public void start(Stage myStage) throws Exception {
         
         myStage.setTitle("Effects");
-        myStage.getIcons().add(new Image(getClass().getResourceAsStream("visual_effects.png")));
+        //myStage.getIcons().add(new Image(getClass().getResourceAsStream("visual_effects.png")));
 
         btnBlur = new Button("Blur");
         btnGlow = new Button("Glow");

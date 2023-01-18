@@ -30,7 +30,7 @@ public class TimelineDemo extends Application{
     public void start(Stage myStage) throws Exception {
         
         myStage.setTitle("Timeline");
-        myStage.getIcons().add(new Image(getClass().getResourceAsStream("timeline.png")));
+        //myStage.getIcons().add(new Image(getClass().getResourceAsStream("timeline.png")));
         
         VBox rootNode = new VBox(30);
         rootNode.setAlignment(Pos.CENTER);
